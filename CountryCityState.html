@@ -1,0 +1,84 @@
+<html>
+
+<head></head>
+
+<body>
+    <form>
+        <label>Country</label><br>
+        <select id="ddlCountry" onchange="BindStateDropdown()">
+            <option>Please Select a Country</option>
+            <option>Australia
+            </option>
+            <option>USA
+            </option>
+            <option>India
+            </option>
+        </select><br><br>
+        <label>State</label>
+        <br>
+        <Select id="ddlState" onchange="BindCityDropdown()">
+            <option>Please Select a State</option>
+            <option>Victoria
+            </option>
+            <option>Atlanta
+            </option>
+            <option>West Bengal
+            </option>
+        </Select>
+        <br><br>
+        <label>City</label>
+        <br>
+        <Select id="ddlCity" onchange="BindCityDropdown()">
+            <option>Please Select a City</option>
+            <option>Sidney
+            </option>
+            <option>Chicago
+            </option>
+            <option>Kolkata
+            </option>
+        </Select>
+        <br><br>
+    </form>
+</body>
+
+</html>
+
+<script>
+    function BindStateDropdown() {
+        var txtCountry = document.getElementById('ddlCountry'.value);
+        switch (txtCountry) {
+            case 'India':
+                document.getElementById('ddlState').innerHTML = '<option>Select State</option><option>Karnataka</option>';
+                break;
+            case 'USA':
+                document.getElementById('ddlState').innerHTML = '<option>Select State</option><option>Atlanta</option>';
+                break;
+            case 'Australia':
+                document.getElementById('ddlState').innerHTML = '<option>Select State</option><option>Victoria</option>';
+                break;
+            default:
+                document.getElementById('ddlState').innerHTML = '';
+                break;
+        }
+    }
+
+    function BindCityDropdown() {
+        var txtState = document.getElementById('ddlState'.value);
+        switch (txtState) {
+            case 'West Bengal':
+                document.getElementById('ddlCity').innerHTML = '<option>Select City</option><option>Kolkata</option>';
+                break;
+            case 'Atlanta':
+                document.getElementById('ddlCity').innerHTML = '<option>Select City</option><option>Chicago</option>';
+                break;
+            case 'Victoria':
+                document.getElementById('ddlCity').innerHTML = '<option>Select City</option><option>Sydney</option>';
+                break;
+            default:
+                document.getElementById('ddlcity').innerHTML = '';
+                break;
+
+        }
+    }
+    
+</script>
